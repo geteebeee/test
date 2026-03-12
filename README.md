@@ -6,10 +6,8 @@ Cross-platform desktop GUI (Windows/Linux) for bulk inspection and extraction of
 - Drag & drop multiple `.msg` files into the app.
 - See parsed attachments in a table (email source, name, extension, size).
 - Tick/untick which attachments should be extracted.
-- Filter the list by file type (for example `pdf` or `.pdf`) and optionally apply that filter to extraction scope.
+- Filter the list by file type (for example `pdf` or `.pdf`).
 - Extract selected attachments into an output folder.
-- Merge extracted PDFs into one file (optional).
-- One-click controls to select/deselect all visible rows and select by active type filter.
 
 ## Setup
 ```bash
@@ -49,10 +47,6 @@ This produces:
 - `dist\MsgAttachmentInspector.exe`
 
 You can copy that `.exe` to another Windows PC and run it directly.
-
-## Extraction behavior
-- The **Apply type filter during extraction** toggle controls whether hidden/non-matching file types are excluded from extraction.
-- This means filter changes can now affect both what is displayed and what is extracted (when enabled).
 
 ## Notes
 - Supports Windows and Linux as requested.

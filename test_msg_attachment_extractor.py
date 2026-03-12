@@ -18,20 +18,6 @@ def test_filter_records_accepts_dot_and_no_dot():
     assert pdf_b[0].attachment_name == "x.pdf"
 
 
-def test_records_for_extraction_applies_filter_when_enabled():
-    records = [
-        AttachmentRecord(Path("a.msg"), "x.pdf", ".pdf", 1, selected=True),
-        AttachmentRecord(Path("a.msg"), "x.docx", ".docx", 1, selected=True),
-        AttachmentRecord(Path("a.msg"), "x.txt", ".txt", 1, selected=False),
-    ]
-
-    with_filter = MsgAttachmentExtractor.records_for_extraction(records, "pdf", True)
-    without_filter = MsgAttachmentExtractor.records_for_extraction(records, "pdf", False)
-
-    assert [r.attachment_name for r in with_filter] == ["x.pdf"]
-    assert [r.attachment_name for r in without_filter] == ["x.pdf", "x.docx"]
-
-
 def test_safe_destination_deduplicates(tmp_path: Path):
     (tmp_path / "report.pdf").write_text("exists")
 
